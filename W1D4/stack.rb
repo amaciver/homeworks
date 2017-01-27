@@ -16,6 +16,6 @@ class Stack
 
     def show
       # return a copy of the stack
-      self
+      @ivar.dup
     end
   end
