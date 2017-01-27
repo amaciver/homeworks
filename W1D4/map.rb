@@ -1,4 +1,5 @@
 class Map
+  
   def initialize(&prc)
     if !block_given?
       @default_block = lambda { return nil }
@@ -15,7 +16,9 @@ class Map
         @ivar[idx] = [key, value]
         return
       end
+
     end
+
     @ivar << [key, value]
   end
 
@@ -23,6 +26,7 @@ class Map
     @ivar.each do |el|
       return el[1] if el[0] == key
     end
+
     @ivar << [key, @default_block.call]
   end
 
@@ -32,9 +36,11 @@ class Map
       if el[0] == key
         arr.delete_at(idx)
         @ivar = arr
-        return
+        return el[1]
       end
+
     end
+
     return nil
   end
 end
