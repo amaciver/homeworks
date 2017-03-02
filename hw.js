@@ -30,3 +30,33 @@ var fizzBuzz = function(array) {
 };
 
 // fizzBuzz([2,3,4,5,9,10,15]);
+
+var isPrime = function(num) {
+  for(let i=2; i<=num/2; i++) {
+    if (num % i === 0) {
+      console.log(false);
+      return false;
+    }
+  }
+  console.log(num);
+  return true
+}
+
+// isPrime(10);
+// isPrime(17);
+
+var sumOfNPrimes = function(n) {
+  var count = 0;
+  var sum = 0;
+  var i = 2;
+  while (count < n) {
+    if (isPrime(i)) {
+      sum += i;
+      count++;
+    }
+    i++;
+  }
+  console.log(sum);
+}
+
+sumOfNPrimes(4);
